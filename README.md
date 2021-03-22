@@ -1,4 +1,4 @@
-Jokes API - fullstack version
+# Jokes API - fullstack version
 
 Side note, this is the assignment from the MERN stack at Coding Dojo. But on top of the assignment itself, the project has been converted into fullstack as a practice.
 
