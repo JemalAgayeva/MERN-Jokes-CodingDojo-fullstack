@@ -20,12 +20,13 @@ const AllJokes = () => {
 
     return (
         <div>
-            <h1>Welcome to the fun page!</h1>
+            <h1 className="text-info">Welcome to the fun page!</h1>
             {
                 allJokes.map((jokeObj, idx) =>{
                     return <div>
-                        <h3>Joke is by: {jokeObj.writtenBy}</h3>
+                        <h3 className="text-primary">Joke is by: {jokeObj.writtenBy}</h3>
                         <p>Joke: {jokeObj.content}</p>
+                        <hr className="col-sm-2 mx-auto" />
                     </div>
                 }
             )}
