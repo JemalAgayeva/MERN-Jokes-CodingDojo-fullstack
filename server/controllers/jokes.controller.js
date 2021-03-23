@@ -6,7 +6,7 @@ module.exports.findAllJokes = (req, res) => {
             console.log("finding all jokes");
             res.json({ results: allJokes })
 })
-        .catch(err => res.json({ message: 'Something went wrong', error: err }));
+        .catch(err => res.json(err))
 }
 
 module.exports.randomJoke = (req, res) =>{
@@ -23,7 +23,7 @@ module.exports.randomJoke = (req, res) =>{
             console.log("random joke: ", randomNum)
             res.json({results: alljokes[randomNum]})
         })
-        .catch()
+        .catch(err => res.json(err))
 }
 
 module.exports.findAJoke = (req, res) => {
@@ -32,7 +32,7 @@ module.exports.findAJoke = (req, res) => {
         console.log("should get one joke");
         res.json({results: joke})
     })
-    .catch(err => res.json({message: 'Something went wrong', error: err}))
+    .catch(err => res.json(err))
 }
 
  
@@ -42,7 +42,8 @@ module.exports.createOneJoke = (req, res) => {
             console.log("creating a joke");
             res.json({ results: newlyCreateJoke })
         })
-        .catch(err => res.json({ message: 'Something went wrong', error: err }));
+        // .catch(err => res.json({ message: 'Something went wrong', error: err }));
+        .catch(err => res.json(err));
 }
 
 module.exports.updateAJoke = (req, res) => {
@@ -54,7 +55,7 @@ module.exports.updateAJoke = (req, res) => {
         console.log("should update joke");
         res.json({results: updatedJoke})
     })
-    .catch(err => res.json({message: 'Something went wrong', error: err}))
+    .catch(err => res.json(err))
 }
 
 module.exports.deleteAJoke = (req, res) => {
@@ -63,6 +64,6 @@ module.exports.deleteAJoke = (req, res) => {
         console.log("should delete joke");
         res.json({results: deleteJoke})
     })
-    .catch(err => res.json({message: 'Something went wrong', error: err}))
+    .catch(err => res.json(err))
 
 }

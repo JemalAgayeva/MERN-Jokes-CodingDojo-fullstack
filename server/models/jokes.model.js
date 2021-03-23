@@ -5,10 +5,11 @@ const mongoose = require('mongoose');
 const JokeSchema = new mongoose.Schema({
     writtenBy: {
         type: String,
-        // required:[true,"This is how we validate"],
-        // minlength: [3,"Setup has to be more than 2 characters"]
+        required:[true,"Author is required"],
+        minlength: [3,"Setup has to be more than 2 characters"]
     },
     content: {
+        required:[true,"Content is required"],
         type: String
     },
     // punchline: String

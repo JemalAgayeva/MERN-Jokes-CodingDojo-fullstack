@@ -34,7 +34,7 @@ const OneJoke = (props) => {
     return (
         <div>
             <h1 className="text-info mb-5">Details of One Joke:</h1>
-            {jokeInfo == null? <h1>No matching joke found</h1>:
+            {jokeInfo == null? <h5 className="text-secondary mb-5">No matching joke found</h5>:
             <>
             <p>Written by: {jokeInfo.writtenBy}</p>
             <p>Content: {jokeInfo.content}</p>

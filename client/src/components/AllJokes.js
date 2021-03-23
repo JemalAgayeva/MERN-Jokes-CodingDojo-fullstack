@@ -28,6 +28,7 @@ const AllJokes = () => {
                         <h3 className="text-primary">Joke is by: {jokeObj.writtenBy}</h3>
                         <p>Joke: {jokeObj.content}</p>
                         <button className="btn btn-secondary"><Link className="text-light" to={`/jokes/info/${jokeObj._id}`}>View More Details</Link></button>
+                        <button className="btn btn-secondary"><Link className="text-light" to={`/jokes/edit/${jokeObj._id}`}>Edit Joke</Link></button>
                         <hr className="col-sm-2 mx-auto" />
                     </div>
                 }
