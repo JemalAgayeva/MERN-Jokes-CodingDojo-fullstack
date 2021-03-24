@@ -24,7 +24,7 @@ const changeHandler = (e) => {
 const submitHandler = (e) =>{
     e.preventDefault()
     console.log("getting ready to submit this joke", formInfo)
-    axios.post("http://localhost:8000/api/jokes/create")
+    axios.post("http://localhost:8000/api/jokes/create", formInfo)
         .then(response => {
             console.log("****** response from create api after submitting form")
             console.log(response)

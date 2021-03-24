@@ -3,12 +3,12 @@ import React, {useState, useEffect} from 'react';
 import {navigate} from '@reach/router';
 
 const EditJoke = (props) => {
-
+    
     const [formInfo, setFormInfo] = useState({
         writtenBy: "",
         content: ""
     })
-    
+
     useEffect(() =>{
         axios.get(`http://localhost:8000/api/jokes/${props.jokeId}`)
             .then(response => {
@@ -18,7 +18,7 @@ const EditJoke = (props) => {
                 setFormInfo(response.data.results)
             })
             .catch(err => console.log(err))
-    })
+    }, [])
 
     const changeHandler = (e) => {
         console.log("changing the input")
@@ -50,7 +50,7 @@ const EditJoke = (props) => {
             <p>Written By: <input type="text" name="writtenBy" onChange={changeHandler} value={formInfo.writtenBy}/></p>
             <p>Joke: <textarea name="content" id="" cols="30" rows="10" onChange={changeHandler} value={formInfo.content}></textarea></p>
             {/* <p><input type="date" name="" onChange={changeHandler}/></p> */}
-            <p><input type="submit" value="Create Joke"/></p>
+            <p><input type="submit" value="Edit Joke"/></p>
         </form>
             
         </div>
